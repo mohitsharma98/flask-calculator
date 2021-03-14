@@ -1,9 +1,9 @@
-FROM python:3.7
+FROM python:3.6.6
 
-RUN mkdir /app
-WORKDIR /app/
-ADD . /app/
+WORKDIR /app
+COPY . /app
 RUN pip install -r requirements.txt
 EXPOSE 5000
 
-CMD ["python", "/app/app.py"]
+ENTRYPOINT ["python"]
+CMD ["app.py"]
